@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(() => {
+            $('#sendButton').on('click', () => {
+                const color = $('#color').val();
+                $.get(
+                    'http://localhost:8080/api/color?color=' + color
+                );
+            });
+        });
+    </script>
+</head>
+<body>
+    <label for="color">色</label>
+    <input type="text" id="color">
+    <input type="button" id="sendButton" value="send">
+</body>
+</html>
